@@ -1,0 +1,81 @@
+$(document).ready(function () {
+
+    var topics = ["sports", "basketball", "baseball", "football", "skiing", "swimming", "table tennis",
+        "hockey", "golf", "bull riding", "gymnastics", "martial arts", "racing", "cycling"];
+    console.log(topics);
+
+    $("button").on("click", function () {
+        displayGif;
+        addButton;
+    });
+
+    function displayGif() {
+
+        var sports = $(this).attr("type-sports");
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
+            sports + "&api_key=RBG2FZTkXcKXAkOSnsX2B1SQR6CsfgeW&limit=10&offset=0&rating=G&lang=en";
+        console.log(this);
+
+        //   AJAX call
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            console.log(response);
+
+            var topics = response.data;
+
+            for (var i = 0; i < topics.length; i++) {
+                var sportDiv = $("<div>");
+                var selectImage = $("<img>");
+                var rating = $("<p>").text("Rating: " + topics[i].rating);
+                var title = $("<p>").text(topics[i].title);
+                $(selectImage).attr('src', topics[i].images.fixed_height_still.url);
+                $(selectImage).attr('data-still', topics[i].images.fixed_height_still.url);
+                $(selectImage).attr('data-animate', topics[i].images.fixed_height.url);
+                $(selectImage).attr('data-state', 'still');
+                $(selectImage).addClass("gif");
+                
+                $(sportDiv).append(selectImage, title, rating);
+                $("#display-gif").prepend(sportDiv);               
+            }
+        });
+    }
+
+     // animation control
+     $(document).on("click", ".gif", function () {
+        var state = $(this).attr("data-state");
+        if (state === "still") {
+            $(this).attr("src", $(this).attr("data-animate"));
+            $(this).attr("data-state", "animate");
+        } else {
+            $(this).attr("src", $(this).attr("data-still"));
+            $(this).attr("data-state", "still");
+        }
+    });
+
+    // display array as buttons on the page
+    function addButton() {
+
+        $("#buttons-display").empty();
+        for (var i = 0; i < topics.length; i++) {
+            var sportDiv = $("<button>");
+            sportDiv.addClass("newSport");
+            sportDiv.attr("type-sports", topics[i]);
+            sportDiv.text(topics[i]);
+            $("#buttons-display").append(sportDiv);
+        }
+    }
+
+    $("#add-sport").on("click", function (event) {
+        event.preventDefault();
+        var sports = $("#gif-buttons").val().trim();
+        topics.push(sports);
+        console.log(sports);
+        addButton();
+        $("#gif-form")[0].reset();
+    });
+    // adds new button to the array
+    $(document).on("click", ".newSport", displayGif);
+    addButton();
+});
