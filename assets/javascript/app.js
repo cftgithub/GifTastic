@@ -23,16 +23,16 @@ $(document).ready(function () {
         }).then(function (response) {
             console.log(response);
 
-            var topics = response.data;
+            var topic = response.data;
 
-            for (var i = 0; i < topics.length; i++) {
+            for (var i = 0; i < topic.length; i++) {
                 var sportDiv = $("<div>");
                 var selectImage = $("<img>");
-                var rating = $("<p>").text("Rating: " + topics[i].rating);
-                var title = $("<p>").text(topics[i].title);
-                $(selectImage).attr('src', topics[i].images.fixed_height_still.url);
-                $(selectImage).attr('data-still', topics[i].images.fixed_height_still.url);
-                $(selectImage).attr('data-animate', topics[i].images.fixed_height.url);
+                var rating = $("<p>").text("Rating: " + topic[i].rating.toUpperCase());
+                var title = $("<p>").text(topic[i].title.toUpperCase());
+                $(selectImage).attr('src', topic[i].images.fixed_height_still.url);
+                $(selectImage).attr('data-still', topic[i].images.fixed_height_still.url);
+                $(selectImage).attr('data-animate', topic[i].images.fixed_height.url);
                 $(selectImage).attr('data-state', 'still');
                 $(selectImage).addClass("gif");
                 
