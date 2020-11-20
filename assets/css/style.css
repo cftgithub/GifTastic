@@ -1,6 +1,7 @@
 button, div, form, input{
       margin: 10px;
     }
+
 .jumbotron{
   padding-bottom: 10px;
   background-image: url(../image/concrete-wall-2.png);
@@ -8,18 +9,34 @@ button, div, form, input{
   font-weight: bolder;
   border: 5px solid #003585;
 }
+
+.menu {
+  text-align: center;
+}
+
 p{
   margin: 2px 0px 0px 0px;
   font-weight: bolder;
 }
+
 body{
   margin: 50px;
   background-image: url(../image/clean-gray-paper.png);
   background-color: #ac6a2c;
 }
+
 #display-gif{
-  padding: 20px;
+  justify-content: center;  
 }
+
+.card {
+  background-color: #003585;
+  /* background-image: url(../image/concrete-wall-2.png); */
+  background-image: url(../image/clean-gray-paper.png);
+
+  color: aliceblue;
+}
+
 h1, .lead, label{
   color: white;
   font-weight: bolder;
@@ -29,6 +46,7 @@ h1, .lead, label{
 button, #gif-buttons, #add-sport{
   border: 5px solid #003585;
 }
+
 .newSport, #add-sport{
   font-weight: bold;
 }

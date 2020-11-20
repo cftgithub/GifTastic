@@ -26,7 +26,7 @@ $(document).ready(function () {
             var topic = response.data;
 
             for (var i = 0; i < topic.length; i++) {
-                var sportDiv = $("<div class='card border-dark' style='width: 20rem'>");
+                var sportDiv = $("<div class='card border-dark mb-5' style='width: 20rem'>");
                 var selectImage = $("<img>");
                 var rating = $("<p>").text("Rating: " + topic[i].rating.toUpperCase());
                 var title = $("<p>").text(topic[i].title.toUpperCase());
