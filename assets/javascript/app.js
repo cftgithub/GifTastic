@@ -15,10 +15,10 @@ $(document).ready(function () {
         var queryURL = "https://api.giphy.com/v1/gifs/random?tag=" +
             sports + "&api_key=RBG2FZTkXcKXAkOSnsX2B1SQR6CsfgeW&rating=G";
         console.log(this);
+        // Using random endpoint will only return a single GIF
 
         //   AJAX call
         for (var i = 0; i < 5; i++) {
-
             $.ajax({
                 url: queryURL,
                 method: "GET"
