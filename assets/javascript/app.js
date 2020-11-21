@@ -11,8 +11,10 @@ $(document).ready(function () {
 
     function displayGif() {
         var sports = $(this).attr("type-sports");
+        var filter = document.getElementById("filter-buttons").value.toUpperCase();
+        var rating = "&rating=" + filter;
         var queryURL = "https://api.giphy.com/v1/gifs/random?tag=" +
-            sports + "&api_key=RBG2FZTkXcKXAkOSnsX2B1SQR6CsfgeW&rating=G";
+            sports + "&api_key=RBG2FZTkXcKXAkOSnsX2B1SQR6CsfgeW" + rating;
         // Using random endpoint returns only a single GIF
 
         //   AJAX call: for loop used to get 5 gifs at a time
@@ -27,7 +29,6 @@ $(document).ready(function () {
                 var selectImage = $("<img>");
                 var rating = $("<p>").text("Rating: " + topic.rating.toUpperCase());
                 var title = $("<p>").text(topic.title.toUpperCase());
-
                 var still = topic.images.fixed_height_still.url;
                 var animate = topic.images.fixed_height.url;
                 $(selectImage).attr('src', still);
@@ -70,7 +71,6 @@ $(document).ready(function () {
         event.preventDefault();
         var sports = $("#gif-buttons").val().trim();
         topics.push(sports);
-        console.log(sports);
         addButton();
         $("#gif-form")[0].reset();
     });

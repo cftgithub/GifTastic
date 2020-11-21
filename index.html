@@ -16,20 +16,21 @@
             <h1 class="display-4 font-weight-bolder">GIPHY Sports</h1>
             <h2>Powered By GIPHY!</h2>
             <p class="lead">Click a category to see what pops up.</p>
+            <form>
+                <label for="filter-buttons">Filter by highest rating to display (Optional):</label>
+                <input type="text" id="filter-buttons" placeholder="Enter G, PG, PG-13 or R">
+            </form>
         </div>
-
         <!-- display all buttons -->
         <div class="menu">
-
             <div id="buttons-display"></div>
 
             <!-- box to type in another sport -->
             <form id="gif-form">
                 <label for="gif-buttons">Want to see more? Add your own category:</label>
                 <input type="text" id="gif-buttons">
-
                 <!-- Button triggers new sport to be added -->
-                <input id="add-sport" type="submit" value="SUBMIT">
+                <input id="add-sport" type="submit" value="SUBMIT"><br>
             </form>
         </div>
     </div>

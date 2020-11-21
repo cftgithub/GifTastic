@@ -10,7 +10,7 @@ button, div, form, input{
   border: 5px solid #003585;
 }
 
-.menu {
+.menu{
   text-align: center;
 }
 
@@ -30,7 +30,7 @@ body{
   justify-content: center;  
 }
 
-.card {
+.card{
   background-color: #003585;
   background-image: url(../image/clean-gray-paper.png);
   border-width: 5px;
@@ -47,7 +47,7 @@ h1, h2, .lead, label{
   text-shadow: 0px 0px 4px #003585, 0px 0px 4px #003585, 0px 0px 4px #003585, 0px 0px 4px #003585;
   
 }
-button, #gif-buttons, #add-sport{
+button, #gif-buttons, #add-sport, #filter-buttons{
   border: 5px solid #003585;
 }
 
