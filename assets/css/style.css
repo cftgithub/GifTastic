@@ -37,7 +37,7 @@ body{
   color: aliceblue;
 }
 
-h1, .lead, label{
+h1, h2, .lead, label{
   color: white;
   font-weight: bolder;
   text-shadow: 0px 0px 4px #003585, 0px 0px 4px #003585, 0px 0px 4px #003585, 0px 0px 4px #003585;
