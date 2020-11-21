@@ -1,4 +1,4 @@
-// API from Giphy Developers
+// API from Giphy Developers @ developers.giphy.com
 
 $(document).ready(function () {
     var topics = ["sports", "basketball", "baseball", "football", "skiing", "swimming", "table tennis",
