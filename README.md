@@ -7,6 +7,7 @@ To create an entertaining interactive webpage using GIPHY API.
 ## Features:
 * Category buttons allowing users to click on pre-selected categories to display gifs.
 * An input section allowing users to add additional categories.
+* A Rating filter to control the highest rating to be displayed.
 * 5 random gifs are displayed each time a category button is clicked. Each click will add images to the page. Previously displayed images will not be overwritten.
 * The title and rating of each gif is displayed below the gif image.
 * Clicking the image will change the image from "still" to "animate", and vice versa.
@@ -21,6 +22,7 @@ To create an entertaining interactive webpage using GIPHY API.
 * Each button click will return 5 still images of random gifs. Each additional clicks will add new images to the beginning of the existing images.
 * Each image will have a "still" and "animate" property. Clicking on the image will change the property and alternate between "still" and "animate".
 * GIPHY provides a title and rating for most gifs in the database. If the information is available, it will be displayed below the image.
+* An input box is available for the user to enter the highest rating to filter for, if desired. Possible ratings are G, PG, PG-13 and R. Entering "PG" in the input field will return gifs that are rated G or PG only.
 
 ## Challenges:
 1. GIPHY image sizes are varied (different height and width), this creates a messy feel when displayed on the page. 
