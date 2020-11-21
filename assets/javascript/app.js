@@ -1,7 +1,7 @@
 // API from Giphy Developers @ developers.giphy.com
 
 $(document).ready(function () {
-    var topics = ["sports", "basketball", "baseball", "football", "skiing", "swimming", "table tennis",
+    var topics = ["all sports", "basketball", "baseball", "football", "skiing", "swimming", "table tennis",
         "hockey", "golf", "bull riding", "gymnastics", "martial arts", "racing", "cycling"];
     console.log(topics);
 
@@ -27,38 +27,23 @@ $(document).ready(function () {
 
                 var topic = response.data;
 
-                var sportDiv = $("<div class='card border-dark mb-5' style='width: 20rem'>");
+                var sportDiv = $("<div class='card' style='width: 20rem'>");
                 var selectImage = $("<img>");
                 var rating = $("<p>").text("Rating: " + topic.rating.toUpperCase());
                 var title = $("<p>").text(topic.title.toUpperCase());
-                $(selectImage).attr('src', topic.images.fixed_height_still.url);
-                $(selectImage).attr('data-still', topic.images.fixed_height_still.url);
-                $(selectImage).attr('data-animate', topic.images.fixed_height.url);
+
+                var still = topic.images.fixed_height_still.url;
+                var animate = topic.images.fixed_height.url;
+                $(selectImage).attr('src', still);
+                $(selectImage).attr('data-still', still);
+                $(selectImage).attr('data-animate', animate);
                 $(selectImage).attr('data-state', 'still');
                 $(selectImage).addClass("gif");
                 $(sportDiv).append(selectImage, title, rating);
                 // $(sportDiv).append(selectImage);
                 $("#display-gif").prepend(sportDiv);
-
-
-                // for (var i = 0; i < topic.length; i++) {
-                //     var sportDiv = $("<div class='card border-dark mb-5' style='width: 20rem'>");
-                //     var selectImage = $("<img>");
-                //     var rating = $("<p>").text("Rating: " + topic[i].rating.toUpperCase());
-                //     var title = $("<p>").text(topic[i].title.toUpperCase());
-                //     $(selectImage).attr('src', topic[i].images.fixed_height_still.url);
-                //     $(selectImage).attr('data-still', topic[i].images.fixed_height_still.url);
-                //     $(selectImage).attr('data-animate', topic[i].images.fixed_height.url);
-                //     $(selectImage).attr('data-state', 'still');
-                //     $(selectImage).addClass("gif");
-
-                //     $(sportDiv).append(selectImage, title, rating);
-                //     // $(sportDiv).append(selectImage);
-                //     $("#display-gif").prepend(sportDiv);
-                // }
             });
         }
-
     }
 
     // animation control
@@ -75,7 +60,6 @@ $(document).ready(function () {
 
     // display array as buttons on the page
     function addButton() {
-
         $("#buttons-display").empty();
         for (var i = 0; i < topics.length; i++) {
             var sportDiv = $("<button>");

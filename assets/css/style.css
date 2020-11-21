@@ -17,6 +17,7 @@ button, div, form, input{
 p{
   margin: 2px 0px 0px 0px;
   font-weight: bolder;
+  padding: 0px 5px;
 }
 
 body{
@@ -33,6 +34,10 @@ body{
   background-color: #003585;
   /* background-image: url(../image/concrete-wall-2.png); */
   background-image: url(../image/clean-gray-paper.png);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #003585;
+  padding: 2px;
 
   color: aliceblue;
 }
