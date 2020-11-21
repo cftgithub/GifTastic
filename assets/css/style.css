@@ -32,7 +32,6 @@ body{
 
 .card {
   background-color: #003585;
-  /* background-image: url(../image/concrete-wall-2.png); */
   background-image: url(../image/clean-gray-paper.png);
   border-width: 5px;
   border-style: solid;
