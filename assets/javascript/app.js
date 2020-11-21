@@ -3,7 +3,6 @@
 $(document).ready(function () {
     var topics = ["all sports", "basketball", "baseball", "football", "skiing", "swimming", "table tennis",
         "hockey", "golf", "bull riding", "gymnastics", "martial arts", "racing", "cycling"];
-    console.log(topics);
 
     $("button").on("click", function () {
         displayGif;
@@ -14,20 +13,17 @@ $(document).ready(function () {
         var sports = $(this).attr("type-sports");
         var queryURL = "https://api.giphy.com/v1/gifs/random?tag=" +
             sports + "&api_key=RBG2FZTkXcKXAkOSnsX2B1SQR6CsfgeW&rating=G";
-        console.log(this);
-        // Using random endpoint will only return a single GIF
+        // Using random endpoint returns only a single GIF
 
-        //   AJAX call
+        //   AJAX call: for loop used to get 5 gifs at a time
         for (var i = 0; i < 5; i++) {
             $.ajax({
                 url: queryURL,
                 method: "GET"
             }).then(function (response) {
-                console.log(response);
-
                 var topic = response.data;
-
                 var sportDiv = $("<div class='card' style='width: 20rem'>");
+
                 var selectImage = $("<img>");
                 var rating = $("<p>").text("Rating: " + topic.rating.toUpperCase());
                 var title = $("<p>").text(topic.title.toUpperCase());
