@@ -1,4 +1,4 @@
-# GifTastic
+# GifTastic GIPHY Sports
 A dynamic web page "Powered by GIPHY". [Click for Demo](https://cftgithub.github.io/GifTastic/)
 
 ## Purpose: 
