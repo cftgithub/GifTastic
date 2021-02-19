@@ -4,10 +4,11 @@ $(document).ready(function () {
     var topics = ["all sports", "basketball", "baseball", "football", "skiing", "swimming", "table tennis",
         "hockey", "golf", "bull riding", "gymnastics", "martial arts", "racing", "cycling"];
 
-    $("button").on("click", function () {
-        displayGif;
-        addButton;
-    });
+    // $("button").on("click", function () {
+    //     document.getElementById(changeText).innerHTML = "Click an Image to See It In Motion!";
+    //     displayGif;
+    //     addButton;
+    // });
 
     function displayGif() {
         var sports = $(this).attr("type-sports");
@@ -41,6 +42,7 @@ $(document).ready(function () {
                 $("#display-gif").prepend(sportDiv);
             });
         }
+        document.getElementById("changeText").innerHTML = "Click an Image to See It In Motion!";
     }
 
     // animation control
