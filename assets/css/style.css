@@ -15,6 +15,10 @@ button, div, form, input{
   padding-left: 5px;
 }
 
+input#filter-buttons{
+  text-align: center;
+}
+
 .menu{
   text-align: center;
 }
